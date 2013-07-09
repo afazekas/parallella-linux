@@ -408,8 +408,11 @@ static unsigned int xuartps_set_baud_rate(struct uart_port *port,
 	else
 		mreg &= ~XUARTPS_MR_CLKSEL;
 	xuartps_writel(mreg, XUARTPS_MR_OFFSET);
-	xuartps_writel(cd, XUARTPS_BAUDGEN_OFFSET);
-	xuartps_writel(bdiv, XUARTPS_BAUDDIV_OFFSET);
+	// R.T.
+	//	xuartps_writel(cd, XUARTPS_BAUDGEN_OFFSET);
+	xuartps_writel(0x56, XUARTPS_BAUDGEN_OFFSET);
+	//	xuartps_writel(bdiv, XUARTPS_BAUDDIV_OFFSET);
+	xuartps_writel(0x4, XUARTPS_BAUDDIV_OFFSET);
 
 	return calc_baud;
 }
