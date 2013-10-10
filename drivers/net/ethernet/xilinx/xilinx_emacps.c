@@ -816,14 +816,14 @@ static void xemacps_adjust_link(struct net_device *ndev)
 			dev_info(&lp->pdev->dev, "link down\n");
 		//R.T. start
 		//This is a temporally solution only
-		regval = xemacps_read(0xf8000000,0x00000140);
-		dev_info(&lp->pdev->dev, "reg value = %x\n",regval);
+		//regval = xemacps_read(0xf8000000,0x00000140);
+		//dev_info(&lp->pdev->dev, "reg value = %x\n",regval);
 		
-		dev_info(&lp->pdev->dev, "setting GEM0_CLK_CTRL\n");
-		xemacps_write(0xf8000000,0x00000140,0x00100c31);
+		//dev_info(&lp->pdev->dev, "setting GEM0_CLK_CTRL\n");
+		//xemacps_write(0xf8000000,0x00000140,0x00100c31);
 		
-		regval = xemacps_read(0xf8000000,0x00000140);
-		dev_info(&lp->pdev->dev, "reg value = %x\n",regval);
+		//regval = xemacps_read(0xf8000000,0x00000140);
+		//dev_info(&lp->pdev->dev, "reg value = %x\n",regval);
 		//R.T. end
 	}
 }
